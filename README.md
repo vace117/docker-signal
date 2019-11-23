@@ -45,7 +45,7 @@ signal() {
       -e HOME \
       -e XAUTHORITY=/tmp/xauth -v ~/.Xauthority:/tmp/xauth \
       -e DISPLAY=$__my_ip:1 --net host -v $HOME:$HOME \
-      ${1+"$@"} kayvan/signal
+      ${1+"$@"} vace117/signal
     kill $SOCAT_PGM_PID
   fi
 }
