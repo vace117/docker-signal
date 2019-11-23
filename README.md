@@ -6,7 +6,7 @@ To run this image, share the X11 socket or use any
 of the other methods to run X11 Apps in Docker.
 
 For example, you can run the image like this on Linux. With this snippet
-in your `~/.bahsrc`:
+in your `~/.bashrc`:
 
 ```
 alias x_in_docker="docker run -d -u 1000:1000 --rm -e HOME \
@@ -14,7 +14,7 @@ alias x_in_docker="docker run -d -u 1000:1000 --rm -e HOME \
   -v $XAUTHORITY:/tmp/xauth -v $HOME:$HOME \
   -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro \
   -v /tmp/.X11-unix:/tmp/.X11-unix -w $HOME"
-alias signal='x_in_docker kayvan/signal'
+alias signal='x_in_docker vace117/signal'
 ```
 
 Launch the app by simply typing `signal` on your command line.
@@ -55,4 +55,7 @@ Now, `signal` should launch the application.
 
 # Reference
 
+- https://github.com/ksylvan/docker-signal
+  - This is the original Docker image, but it did not install the latest version of Signal. I've fixed that in my image.
+  
 - https://signal.org/download/
